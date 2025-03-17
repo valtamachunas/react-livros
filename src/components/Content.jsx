@@ -14,7 +14,7 @@ export function Content() {
   const [citacao, setCitacao] = useState('')
   const [imagem, setImagem] = useState('')
   const [success, setSuccess] = useState(false)
-  const baseURL = 'https://backend-1zx4.onrender.com/mulheres'
+  const baseURL = 'https://nodejs-livros.onrender.com/livros'
 
   useEffect(() => {
     async function getData() {
@@ -67,8 +67,8 @@ export function Content() {
   return (
     <>
       <Header
-        title='Mulheres em Tech Brasil'
-        subtitle='Conheça personalidades femininas que estão transformando a tecnologia no Brasil'
+        title='Gerenciador de leituras'
+        subtitle='Cadastre suas leituras e se divirta!'
         image={listaImg}
       />
       <div className={styles.projectsContainer}>
@@ -120,7 +120,7 @@ export function Content() {
             value={citacao}
             className={styles.formTextArea}
           />
-          <button className={styles.formButton} type="submit">Enviar mensagem</button>
+          <button className={styles.formButton} type="submit">Enviar</button>
           {success && <p>Cadastro realizado com sucesso.</p>}
         </form>
       </div>
