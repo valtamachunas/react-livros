@@ -10,9 +10,10 @@ import styles from '../styles/content.module.css'
 export function Content() {
   const [repositories, setRepositories] = useState([])
   const [nome, setNome] = useState('')
-  const [minibio, setminibio] = useState('')
-  const [citacao, setCitacao] = useState('')
+  const [resumo, setResumo] = useState('')
+  const [autor, setAutor] = useState('')
   const [imagem, setImagem] = useState('')
+  const [nota, setNota] = useState('')
   const [success, setSuccess] = useState(false)
   const baseURL = 'https://nodejs-livros.onrender.com/livros'
 
@@ -28,29 +29,34 @@ export function Content() {
     setNome(event.target.value)
   }
 
-  function handleInputValueminibio(event) {
-    setminibio(event.target.value)
+  function handleInputValueResumo(event) {
+    setResumo(event.target.value)
   }
 
   function handleInputValueImagem(event) {
     setImagem(event.target.value)
   }
 
-  function handleInputValueCitacao(event) {
-    setCitacao(event.target.value)
+  function handleInputValueAutor(event) {
+    setAutor(event.target.value)
+  }
+
+  function handleInputValueNota(event) {
+    setNota(event.target.value)
   }
 
   function handleCreateMessage(event) {
     event.preventDefault()
 
-    console.log('mensagem enviada', nome, citacao, minibio, imagem)
+    console.log('mensagem enviada', nome, resumo, autor, imagem, nota)
 
     async function sendData() {
       await Axios.post(baseURL, {
         nome: nome,
-        citacao: citacao,
-        minibio: minibio,
-        imagem: imagem
+        resumo: resumo,
+        autor: autor,
+        imagem: imagem,
+        nota: nota
       })
       const response = await Axios.get(baseURL)
       setRepositories(response.data)
@@ -59,9 +65,10 @@ export function Content() {
 
     setSuccess(true)
     setNome('')
-    setminibio('')
     setImagem('')
-    setCitacao('')
+    setResumo('')
+    setAutor('')
+    setNota('')
   }
 
   return (
@@ -94,7 +101,7 @@ export function Content() {
         </div>
       </div>
       <div >
-        <h2 className={styles.projectsTitle}>Cadastre uma rainha tech:</h2>
+        <h2 className={styles.projectsTitle}>Cadastre um livro:</h2>
         <form  className={styles.form} onSubmit={handleCreateMessage}>
           <input 
             onChange={handleInputValueNome} 
@@ -109,15 +116,21 @@ export function Content() {
             className={styles.formTextArea}
           />
           <textarea 
-            onChange={handleInputValueminibio} 
-            placeholder="Digite a minibiografia"
-            value={minibio}
+            onChange={handleInputValueAutor} 
+            placeholder="Digite o autor"
+            value={autor}
             className={styles.formTextArea}
           />
           <textarea 
-            onChange={handleInputValueCitacao} 
-            placeholder="Digite a citação"
-            value={citacao}
+            onChange={handleInputValueResumo} 
+            placeholder="Digite o resumo"
+            value={resumo}
+            className={styles.formTextArea}
+          />
+          <textarea 
+            onChange={handleInputValueNota} 
+            placeholder="Digite a nota"
+            value={nota}
             className={styles.formTextArea}
           />
           <button className={styles.formButton} type="submit">Enviar</button>
