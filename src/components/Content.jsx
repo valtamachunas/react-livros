@@ -299,6 +299,10 @@ export function Content() {
             placeholder="Digite a nota"
             value={nota}
             className={styles.formTextArea}
+            type="number"
+            min="0" 
+            max="10"
+            step="0.1"
           />
           <button className={styles.formButton} type="submit">Enviar</button>
           {success && <p>Cadastro realizado com sucesso.</p>}
