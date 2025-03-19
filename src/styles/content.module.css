@@ -466,3 +466,42 @@
   font-weight: bold;
   margin-top: 1rem;
 }
+
+/* Media query mais específica para mobile */
+@media screen and (max-width: 765px) {
+
+  /* Formulário para celular */
+  .form {
+    width: 95% !important;
+    min-height: auto !important;
+    margin: 0 auto !important;
+    padding: 1rem !important;
+  }
+
+  /* Input e textarea para celular */
+  .formInput,
+  .formTextArea {
+    width: 90% !important;
+    padding: 15px !important;
+    font-size: 16px !important;
+    margin-bottom: 15px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Botão para celular */
+  .formButton {
+    width: 90% !important;
+    padding: 15px !important;
+    font-size: 18px !important;
+  }
+}
+
+/* Ainda mais específico para telas muito pequenas */
+@media screen and (max-width: 480px) {
+
+  .formInput,
+  .formTextArea {
+    width: 100% !important;
+    padding: 12px !important;
+  }
+}
