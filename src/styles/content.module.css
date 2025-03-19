@@ -76,7 +76,7 @@
 }
 
 .cardRepoImage {
-  border-radius: 100%;
+  border-radius: 10px;
   width: 70%;
 }
 
@@ -137,7 +137,7 @@
 
 .formInput {
   width: 80%;
-  padding: 12px 32px;
+  padding: 8px 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
   resize: vertical;
@@ -146,7 +146,7 @@
 
 .formTextArea {
   width: 80%;
-  padding: 12px 32px;
+  padding: 8px 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
   resize: vertical;
@@ -155,7 +155,7 @@
 
 
 .formButton {
-  background-color: #4CAF50;
+  background-color: #FF00FF;
   border: none;
   color: white;
   padding: 12px 32px;
@@ -164,11 +164,11 @@
   display: inline-block;
   font-size: 16px;
   margin-top: 1rem;
-  width: 80%;
+  width: 40%;
   border-radius: 4px;
   cursor: pointer;
 }
 
 .formButton:hover {
-  background-color: #4CA;
+  background-color: #FF66CC;
 }
