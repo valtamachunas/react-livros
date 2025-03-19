@@ -163,7 +163,7 @@ export function Content() {
   useEffect(() => {
     async function getData() {
       const response = await Axios.get(baseURL);
-      console.log("Dados recebidos:", response.data[0]); // Verifica o primeiro item
+      console.log("Dados recebidos:", response.data); // Verifica o primeiro item
       setRepositories(response.data);
     }
     getData()
@@ -217,17 +217,21 @@ export function Content() {
   
   // Função para remover livro
   async function handleRemove(id) {
+    // Verifica se recebeu um ID válido
+    if (!id) {
+      console.error("ID inválido:", id);
+      return;
+    }
+  
     try {
-      // Chamada para a API para deletar o livro
+      console.log("Tentando remover livro com ID:", id);
       await Axios.delete(`${baseURL}/${id}`);
       
-      // Atualiza a lista de livros após a exclusão
+      // Atualiza a lista após remover
       const response = await Axios.get(baseURL);
       setRepositories(response.data);
       
-      // Mensagem de sucesso
       setSuccess(true);
-      // Esconder a mensagem após 3 segundos
       setTimeout(() => setSuccess(false), 3000);
     } catch (error) {
       console.error("Erro ao remover livro:", error);
