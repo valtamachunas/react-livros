@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import listaImg from '../assets/image_no_bg.png'
+import listaImg from '../assets/modified_image.png'
 import { Header } from './Header.jsx'
 import { Footer } from './Footer.jsx'
 
