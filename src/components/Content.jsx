@@ -216,11 +216,22 @@ export function Content() {
   
   // Função para remover livro
   async function handleRemove(id) {
-    await Axios.delete(`${baseURL}/${id}`)
-    
-    // Atualiza a lista após remover
-    const response = await Axios.get(baseURL)
-    setRepositories(response.data)
+    try {
+      // Chamada para a API para deletar o livro
+      await Axios.delete(`${baseURL}/${id}`);
+      
+      // Atualiza a lista de livros após a exclusão
+      const response = await Axios.get(baseURL);
+      setRepositories(response.data);
+      
+      // Mensagem de sucesso
+      setSuccess(true);
+      // Esconder a mensagem após 3 segundos
+      setTimeout(() => setSuccess(false), 3000);
+    } catch (error) {
+      console.error("Erro ao remover livro:", error);
+      alert('Erro ao remover o livro. Tente novamente.');
+    }
   }
 
   return (
