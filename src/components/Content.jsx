@@ -162,8 +162,9 @@ export function Content() {
 
   useEffect(() => {
     async function getData() {
-      const response = await Axios.get(baseURL)
-      setRepositories(response.data)
+      const response = await Axios.get(baseURL);
+      console.log("Dados recebidos:", response.data[0]); // Verifica o primeiro item
+      setRepositories(response.data);
     }
     getData()
   }, [])
@@ -245,7 +246,7 @@ export function Content() {
         <div className={styles.projectsContainer}>
           <div className={styles.cardsRepoContainer}>
             {repositories.map((repo) => (
-              <div key={repo.id} className={styles.cardRepo}>
+              <div key={repo._id} className={styles.cardRepo}>
                 <div>
                   <h3>{repo.nome}</h3>
                 </div>
@@ -268,7 +269,7 @@ export function Content() {
                   </p>
                 </div>
                 <button 
-                  onClick={() => handleRemove(repo.id)} 
+                  onClick={() => handleRemove(repo._id)} 
                   className={styles.removeTask}
                 >
                   Remover
