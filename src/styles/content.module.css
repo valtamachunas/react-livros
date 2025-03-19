@@ -1,4 +1,4 @@
-.projectsContainer {
+/* .projectsContainer {
   width: 100%;
   color: #FF69B4;
   text-align: center;
@@ -173,4 +173,259 @@
 
 .formButton:hover {
   background-color: #FF66CC;
+} */
+
+.projectsContainer {
+  width: 100%;
+  color: #FF69B4;
+  text-align: center;
+  padding-top: 2rem;
+}
+
+.projectsTitle {
+  padding-top: 4rem;
+  font-size: 2rem;
+  color: #DA70D6;
+  text-align: center;
+}
+
+.cardsContainer {
+  margin: 0 auto;
+  width: 80%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  font-size: 1rem;
+}
+
+.card {
+  width: 30%;
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  font-size: 1.2rem;
+}
+
+.cardImage {
+  width: 100%;
+}
+
+/* Container para a lista de livros */
+.cardsRepoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  gap: 3rem;
+  padding: 2rem;
+}
+
+/* Card individual do livro */
+.cardRepo {
+  background: #FF1493;
+  width: 30%;
+  min-height: 500px;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.cardRepo:hover {
+  transform: translateY(-5px);
+}
+
+/* Título do livro */
+.cardRepo h3 {
+  color: #fff;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+/* Resumo do livro */
+.cardRepoSummary {
+  color: #fff;
+  font-size: 1rem;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  max-height: 150px;
+  overflow-y: auto;
+  text-align: left;
+}
+
+/* Autor do livro */
+.cardRepoText {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: normal;
+  padding: 0.5rem;
+  width: 100%;
+  text-align: center;
+}
+
+/* Imagem do livro */
+.cardRepoImage {
+  border-radius: 10px;
+  width: 70%;
+  max-height: 200px;
+  object-fit: cover;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Nota do livro */
+.cardRepoQuote {
+  color: #fff;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 1.2rem;
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 0.5rem;
+  border-radius: 8px;
+  width: 100%;
+}
+
+/* Botão remover */
+.removeTask {
+  background-color: #fff;
+  color: #FF1493;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 1rem;
+  width: auto;
+  transition: background-color 0.3s;
+}
+
+.removeTask:hover {
+  background-color: #ffcce6;
+}
+
+/* Container para imagem */
+.cardImgContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 200px;
+  margin-bottom: 1rem;
+}
+
+/* Responsividade */
+@media(max-width: 765px) {
+  .cardsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card {
+    width: 320px;
+  }
+
+  .cardRepo {
+    width: 320px;
+    /* Corrigido de 3200px para 320px */
+    margin-bottom: 2rem;
+  }
+
+  .form {
+    width: 90%;
+  }
+}
+
+/* Container do formulário */
+.formContainer {
+  width: 100%;
+  text-align: center;
+}
+
+/* Formulário */
+.form {
+  margin: 0 auto;
+  border-radius: 12px;
+  width: 40%;
+  min-height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Input de texto */
+.formInput {
+  width: 80%;
+  padding: 10px 16px;
+  border: 2px solid #FFC0CB;
+  border-radius: 8px;
+  resize: vertical;
+  margin-bottom: 1rem;
+  font-size: 16px;
+}
+
+.formInput:focus {
+  border-color: #FF1493;
+  outline: none;
+}
+
+/* Área de texto */
+.formTextArea {
+  width: 80%;
+  padding: 10px 16px;
+  border: 2px solid #FFC0CB;
+  border-radius: 8px;
+  resize: vertical;
+  margin-bottom: 1rem;
+  font-size: 16px;
+  min-height: 80px;
+}
+
+.formTextArea:focus {
+  border-color: #FF1493;
+  outline: none;
+}
+
+/* Botão do formulário */
+.formButton {
+  background-color: #FF00FF;
+  border: none;
+  color: white;
+  padding: 12px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 1rem;
+  width: 30%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.formButton:hover {
+  background-color: #FF66CC;
+}
+
+/* Mensagem de sucesso */
+.form p {
+  color: #FF1493;
+  font-weight: bold;
+  margin-top: 1rem;
 }
